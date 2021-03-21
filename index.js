@@ -5,9 +5,10 @@
 import { AppRegistry } from 'react-native';
 import { App } from './src/App';
 import { name as appName } from './app.json';
-import StorybookUIRoot from './storybook';
-import { RUN_STORYBOOK } from 'react-native-dotenv';
+// import { RUN_STORYBOOK } from '@env';
+// TODO: Fix storybook on load app. Developer should wants to choose between Storybook or the app
+// if (RUN_STORYBOOK) {
+//   import('./storybook');
+// }
 
-AppRegistry.registerComponent(appName, () =>
-  RUN_STORYBOOK ? StorybookUIRoot : App,
-);
+AppRegistry.registerComponent(appName, () => App);
