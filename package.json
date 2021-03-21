@@ -7,7 +7,7 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint .",
+    "lint": "eslint . --ext .ts,.tsx",
     "storybook": "start-storybook -p 7007",
     "build-storybook": "build-storybook"
   },
