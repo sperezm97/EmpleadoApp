@@ -1,23 +1,30 @@
 import React from 'react';
 import { HomeScreen } from 'screens/home/HomeScreen';
+import { ProfileScreen } from 'screens/profile/ProfileScreen';
+import { SearchScreen } from 'screens/search/SearchScreen';
+import { SettingsScreen } from 'screens/settings/SettingsScreen';
 
+import { BottomTabNavigationProp, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator, StackNavigationProp } from '@react-navigation/stack';
 
 export type EmParamsProps = {
-  Home: undefined;
+  Settings: undefined;
+  Search: undefined;
+  Profile: undefined;
 };
 
-export type EmNavigationProps = StackNavigationProp<EmParamsProps>;
+export type EmTabNavigationProp = BottomTabNavigationProp<EmParamsProps>;
 
-const EmpleadoStack = createStackNavigator<EmParamsProps>();
+const Tab = createBottomTabNavigator<EmParamsProps>();
 
 export const App = () => {
   return (
     <NavigationContainer>
-      <EmpleadoStack.Navigator>
-        <EmpleadoStack.Screen name="Home" component={HomeScreen} />
-      </EmpleadoStack.Navigator>
+      <Tab.Navigator>
+        <Tab.Screen name="Settings" component={SettingsScreen} />
+        <Tab.Screen name="Search" component={SearchScreen} />
+        <Tab.Screen name="Profile" component={ProfileScreen} />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 };
