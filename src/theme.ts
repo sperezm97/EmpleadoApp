@@ -1,6 +1,6 @@
 import { TextStyle } from 'react-native';
 
-export interface Fonts {
+interface Fonts {
   caption: TextStyle;
   body: TextStyle;
   button: TextStyle;
@@ -9,13 +9,13 @@ export interface Fonts {
 }
 
 export const Spaces = {
-  xs: 5,
-  sm: 10,
-  nm: 15,
-  md: 20,
-  lg: 25,
-  xl: 30,
-  xxl: 35,
+  xs: 4,
+  sm: 8,
+  nm: 12,
+  md: 16,
+  lg: 20,
+  xl: 24,
+  xxl: 28,
 };
 
 export const Colors = {
@@ -32,6 +32,9 @@ export const Colors = {
   lightGreen: '#74BE58',
   yellow: '#FFC857',
   orange: '#FF9C57',
+
+  white: '#ffffff',
+  black: '#000000',
 };
 
 export const Fonts: Fonts = {
@@ -65,7 +68,7 @@ export const Shadows = {
   elevation: 5,
 };
 
-export const Theme = {
+const Theme = {
   colors: Colors,
   fonts: Fonts,
   shadows: Shadows,
@@ -73,3 +76,5 @@ export const Theme = {
 };
 
 export type Theme = typeof Theme;
+
+export default Theme;

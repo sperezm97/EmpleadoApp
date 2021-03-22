@@ -1,12 +1,22 @@
 import React from 'react';
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet, Text, TextProps } from 'react-native';
+import { Colors, Fonts } from 'theme';
 
-const EmText: React.FC = (props) => {
-  const { children } = props;
+interface EmText extends TextProps {
+  type?: keyof typeof Fonts;
+  color?: keyof typeof Colors;
+}
 
-  return <Text>{children}</Text>;
+export const EmText: React.FC<EmText> = (props) => {
+  const { children, type = 'body', color = 'black', style, ...rest } = props;
+
+  const fontStyles = Fonts[type];
+
+  const fontColor = { color: Colors[color] };
+
+  return (
+    <Text {...rest} style={StyleSheet.flatten([fontStyles, fontColor, style])}>
+      {children}
+    </Text>
+  );
 };
-
-export default EmText;
-
-const styles = StyleSheet.create({});

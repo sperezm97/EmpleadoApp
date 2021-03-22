@@ -1,5 +1,5 @@
+import { ThemeProvider } from 'hooks/useTheme';
 import React from 'react';
-import { HomeScreen } from 'screens/home/HomeScreen';
 import { ProfileScreen } from 'screens/profile/ProfileScreen';
 import { SearchScreen } from 'screens/search/SearchScreen';
 import { SettingsScreen } from 'screens/settings/SettingsScreen';
@@ -19,12 +19,14 @@ const Tab = createBottomTabNavigator<EmParamsProps>();
 
 export const App = () => {
   return (
-    <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="Settings" component={SettingsScreen} />
-        <Tab.Screen name="Search" component={SearchScreen} />
-        <Tab.Screen name="Profile" component={ProfileScreen} />
-      </Tab.Navigator>
-    </NavigationContainer>
+    <ThemeProvider>
+      <NavigationContainer>
+        <Tab.Navigator>
+          <Tab.Screen name="Settings" component={SettingsScreen} />
+          <Tab.Screen name="Search" component={SearchScreen} />
+          <Tab.Screen name="Profile" component={ProfileScreen} />
+        </Tab.Navigator>
+      </NavigationContainer>
+    </ThemeProvider>
   );
 };
