@@ -4,6 +4,6 @@ import { storiesOf } from '@storybook/react-native';
 
 import { LikeButton } from './LikeButton';
 
-storiesOf('Like Button s', module)
+storiesOf('Like Button ', module)
   .add('active', () => <LikeButton value={true} toggleValue={() => {}} />)
-  .add('inative', () => <LikeButton value={false} toggleValue={() => {}} />);
+  .add('inactive', () => <LikeButton value={false} toggleValue={() => {}} />);

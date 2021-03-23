@@ -47,7 +47,7 @@ export const Fonts: Fonts = {
     fontSize: 14,
   },
   button: {
-    fontFamily: 'SFProDisplay-Regular',
+    fontFamily: 'SFProDisplay-Bold',
     fontSize: 16,
   },
   subHeader: {
