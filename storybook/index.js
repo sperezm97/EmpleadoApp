@@ -16,11 +16,7 @@ addDecorator(withKnobs);
 // import stories
 // TODO: Automate Add components to storybook
 configure(() => {
-  require('../src/components/common/EmText.stories.tsx');
-  require('../src/components/common/EmTag.stories.tsx');
-  require('../src/components/common/LikeButton.stories.tsx');
-  require('../src/components/common/EmButton.stories.tsx');
-  require('../src/components/common/EmSwitch.stories.tsx');
+  require('../src/components/stories');
 }, module);
 
 // Refer to https://github.com/storybookjs/storybook/tree/master/app/react-native#start-command-parameters
