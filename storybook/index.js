@@ -18,6 +18,7 @@ addDecorator(withKnobs);
 configure(() => {
   require('../src/components/common/EmText.stories.tsx');
   require('../src/components/common/EmTag.stories.tsx');
+  require('../src/components/common/LikeButton.stories.tsx');
 }, module);
 
 // Refer to https://github.com/storybookjs/storybook/tree/master/app/react-native#start-command-parameters
