@@ -35,6 +35,9 @@ export const Colors = {
 
   white: '#ffffff',
   black: '#000000',
+
+  background: '#f8f8f8',
+  disabled: '#9eabba',
 };
 
 export const Fonts: Fonts = {
