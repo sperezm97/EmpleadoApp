@@ -3,6 +3,7 @@ import { EmIcon } from 'components/common/EmIcon';
 import { EmSwitch } from 'components/common/EmSwitch';
 import { EmText } from 'components/common/EmText';
 import { useTheme } from 'hooks/useTheme';
+import { MainNavigationProps, MainParamsProps } from 'navigator/navigation.types';
 import React from 'react';
 import { StyleSheet, TextInput, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
@@ -10,12 +11,21 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Colors, Fonts, GlobalStyles, Spaces } from 'theme';
 
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { useNavigation } from '@react-navigation/core';
 
 import { categories, CategoryCard } from './categories';
 import { CategoryItem } from './CategoryItem';
 
 export const SearchScreen = () => {
   const { colors } = useTheme();
+  const navigation = useNavigation<MainNavigationProps>();
+
+  const handlePressedSearchButton = () => {
+    navigation.navigate('Jobs', {
+      searchValue: 'Developer',
+    });
+  };
+
   return (
     <SafeAreaView style={GlobalStyles.container}>
       <View style={styles.headerContainer}>
@@ -46,7 +56,10 @@ export const SearchScreen = () => {
           <EmSwitch />
         </View>
         <View>
-          <EmButton buttonStyle={styles.button} textStyle={styles.buttonText}>
+          <EmButton
+            buttonStyle={styles.button}
+            textStyle={styles.buttonText}
+            onPress={handlePressedSearchButton}>
             Buscar
           </EmButton>
         </View>

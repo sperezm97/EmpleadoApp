@@ -64,10 +64,10 @@ export const Fonts: Fonts = {
 };
 
 export const Shadows = {
-  shadowColor: '#000',
-  shadowOpacity: 0.2,
-  shadowOffset: { width: 0, height: 5 },
-  shadowRadius: 15,
+  shadowColor: '#000000',
+  shadowOpacity: 0.1,
+  shadowOffset: { width: 0, height: 2 },
+  shadowRadius: 5,
   elevation: 5,
 };
 
