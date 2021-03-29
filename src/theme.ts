@@ -50,8 +50,8 @@ export const Fonts: Fonts = {
     fontSize: 14,
   },
   button: {
-    fontFamily: 'SFProDisplay-Bold',
-    fontSize: 16,
+    fontFamily: 'SFProDisplay-Regular',
+    fontSize: 15,
   },
   subHeader: {
     fontFamily: 'SFProDisplay-Medium',
@@ -76,6 +76,14 @@ const Theme = {
   fonts: Fonts,
   shadows: Shadows,
   spaces: Spaces,
+};
+
+export const GlobalStyles = {
+  container: {
+    flex: 1,
+    paddingHorizontal: Spaces.md,
+    backgroundColor: Colors.background,
+  },
 };
 
 export type Theme = typeof Theme;

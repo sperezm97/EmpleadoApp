@@ -11,5 +11,5 @@ import 'react-native-gesture-handler';
 // if (RUN_STORYBOOK) {
 // }
 
-import('./storybook');
+// import('./storybook');
 AppRegistry.registerComponent(appName, () => App);

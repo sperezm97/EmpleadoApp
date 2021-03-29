@@ -1,4 +1,4 @@
-import { Colors, Fonts, Spaces } from 'theme';
+import { Colors, Fonts } from 'theme';
 
 import { BottomTabBarOptions } from '@react-navigation/bottom-tabs';
 
