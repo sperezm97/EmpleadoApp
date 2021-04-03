@@ -5,7 +5,7 @@ import { EmView } from 'components/EmView';
 import { useTheme } from 'hooks/useTheme';
 import React from 'react';
 import { Pressable, StyleSheet } from 'react-native';
-import { Colors, Shadows, Spaces } from 'theme';
+import { Colors, Spaces } from 'theme';
 
 import { faChevronLeft, faHeart, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 
