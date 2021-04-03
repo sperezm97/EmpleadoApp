@@ -24,7 +24,7 @@ export const JobListScreen = () => {
       </View>
 
       <FlatList
-        data={[{ id: 'hi' }, { id: 'hi' }]}
+        data={[{ id: 'hi' }]}
         ListHeaderComponent={() => (
           <View style={styles.headerListContainer}>
             <EmText type="header" color="black" style={styles.headerListText}>

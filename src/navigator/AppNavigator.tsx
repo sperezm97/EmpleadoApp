@@ -1,4 +1,5 @@
 import React from 'react';
+import { JobDetailsScreen } from 'screens/jobs/JobDetailsScreen';
 import { JobListScreen } from 'screens/jobs/JobListScreen';
 
 import { NavigationContainer } from '@react-navigation/native';
@@ -14,7 +15,7 @@ export const AppNavigator = () => {
     <NavigationContainer>
       <Main.Navigator detachInactiveScreens mode="card" headerMode="none">
         <Main.Screen name="Tab" component={TabNavigator} />
-        <Main.Screen name="JobDetails" component={TabNavigator} />
+        <Main.Screen name="JobDetails" component={JobDetailsScreen} />
         <Main.Screen name="Jobs" component={JobListScreen} />
       </Main.Navigator>
     </NavigationContainer>
