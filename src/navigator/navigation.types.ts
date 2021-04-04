@@ -6,7 +6,8 @@ import { StackNavigationProp } from '@react-navigation/stack';
 export type MainParamsProps = {
   Tab: undefined;
   Jobs: {
-    searchValue: string;
+    keyword: string;
+    isRemote: boolean;
   };
   JobDetails: undefined;
 };

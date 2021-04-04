@@ -3,28 +3,34 @@ import { EmIcon } from 'components/common/EmIcon';
 import { EmSwitch } from 'components/common/EmSwitch';
 import { EmText } from 'components/common/EmText';
 import { useTheme } from 'hooks/useTheme';
-import { MainNavigationProps, MainParamsProps } from 'navigator/navigation.types';
-import React from 'react';
+import { MainNavigationProps } from 'navigator/navigation.types';
+import React, { useCallback, useState } from 'react';
 import { StyleSheet, TextInput, View } from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Colors, Fonts, GlobalStyles, Spaces } from 'theme';
 
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { useNavigation } from '@react-navigation/core';
 
-import { categories, CategoryCard } from './categories';
-import { CategoryItem } from './CategoryItem';
-
 export const SearchScreen = () => {
   const { colors } = useTheme();
   const navigation = useNavigation<MainNavigationProps>();
+  const [keyword, setKeyword] = useState<string>('');
+  const [isRemote, setIsRemote] = useState<boolean>(false);
 
   const handlePressedSearchButton = () => {
     navigation.navigate('Jobs', {
-      searchValue: 'Developer',
+      keyword,
+      isRemote,
     });
   };
+
+  const handleTextChanged = useCallback(
+    (value: string) => {
+      setKeyword(value);
+    },
+    [keyword],
+  );
 
   return (
     <SafeAreaView style={GlobalStyles.container}>
@@ -34,26 +40,32 @@ export const SearchScreen = () => {
         </EmText>
       </View>
       <View style={styles.inputContainer}>
-        <TextInput style={styles.input} />
+        <TextInput
+          style={styles.input}
+          onChangeText={handleTextChanged}
+          keyboardType="default"
+          value={keyword}
+          maxLength={30}
+        />
         <EmIcon icon={faSearch} color={colors.primaryColor} />
       </View>
       <View>
-        <EmText type="subHeader" color="black" style={styles.searchByCategory}>
+        {/* <EmText type="subHeader" color="black" style={styles.searchByCategory}>
           Buscar por Categorias
-        </EmText>
-        <ScrollView
+        </EmText> */}
+        {/* <ScrollView
           horizontal
           showsHorizontalScrollIndicator={false}
           style={styles.categoryContainer}>
           {categories.map((item: CategoryCard) => (
             <CategoryItem key={item.id.toString()} {...item} />
           ))}
-        </ScrollView>
+        </ScrollView> */}
         <View style={styles.remotesContainer}>
           <EmText type="subHeader" color="black">
             Buscar solo empleos remotos
           </EmText>
-          <EmSwitch />
+          <EmSwitch value={isRemote} onValueChange={setIsRemote} />
         </View>
         <View>
           <EmButton
